@@ -1,0 +1,50 @@
+# dsh-wetype-voice bundle patch
+#
+# 目标：把输入框上那颗麦克风按钮从「DSH 内置本地 SenseVoice 识别」换成
+# 「微信输入法（WeType）语音输入」。
+#
+# 做法：
+#   1) 关掉内置语音输入 Bundle 的四条插入项（按钮 + 识别服务 + SenseVoice 模型 + HTTP 语音 API）；
+#   2) 插入本插件：Host 半侧提供 POST /wetype/api，Client 半侧在
+#      conversation.input.activity 单例槽位里画一颗同位置的麦克风按钮。
+#
+# 想恢复内置语音输入：把下面四条 disabled 改回 false（或整段删掉），
+# 并去掉最后 insert 里的 wetype-voice 两项，然后重启宿主。
+
+# ---- 关掉内置语音输入 ----
+- id: ui-voice-input
+  name: "@deepseek-ai/dsh-experimental-client-ui-voice-input"
+  disabled: true
+
+- id: speech-to-text
+  name: "@deepseek-ai/dsh-experimental-speech-to-text"
+  disabled: true
+
+- id: speech-to-text-sensevoice
+  name: "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice"
+  disabled: true
+
+- id: api-speech-to-text
+  name: "@deepseek-ai/dsh-experimental-api-speech-to-text"
+  disabled: true
+
+# ---- 插入微信输入法语音按钮 ----
+- insert:
+    - id: wetype-voice
+      name: 'dsh-wetype-voice'
+      config:
+        # 微信输入法里「启动语音输入」被设成的那个快捷键。
+        # 本机实测值：右 Alt + 空格（微信输入法设置 → 快捷键 → 语音输入）。
+        # 支持 ctrl / lctrl / rctrl / alt / lalt / ralt / shift / lshift / rshift / win，
+        # 末位是主键：a-z、0-9、space、enter、esc、tab、f1-f12、`、-、=、[、]、;、'、,、.、/、\
+        hotkey: 'ralt+space'
+        # 注入方式：scan = 只发扫描码（最像物理按键）；vk = 只发虚拟键；both = 两种各发一次
+        injectMode: 'scan'
+        # 前台窗口守卫：auto = 只允许宿主自身进程（DeepSeek Harness.exe）；
+        # list = 只允许 allowProcesses 里列出的进程；any = 不检查
+        guard: 'auto'
+        allowProcesses: []
+        # 快捷键按下前的预热延时（毫秒），给焦点切换留时间
+        leadMs: 60
+        # 覆盖文件默认是 $DSH_HOME/wetype-voice.json，改了不用重启，下次点击即生效
+        # （JSON：{ "hotkey": "ctrl+alt+space", "guard": "auto", "allowProcesses": [] }）
