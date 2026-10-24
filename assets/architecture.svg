@@ -88,14 +88,14 @@
 
   <!-- old path, struck through -->
   <g opacity="0.55">
-    <text class="dim" x="48" y="470">内置链路（已被 patch 关闭）</text>
+    <text class="dim" x="48" y="470">内置链路（已被 patch 关闭）· 声音走本地小模型，准确率不够</text>
     <g>
       <rect x="48" y="486" width="196" height="72" rx="14" fill="#0D1526" stroke="#FFFFFF" stroke-opacity="0.07"/>
       <text class="dim" x="70" y="520">MediaRecorder</text>
       <rect x="300" y="486" width="196" height="72" rx="14" fill="#0D1526" stroke="#FFFFFF" stroke-opacity="0.07"/>
-      <text class="dim" x="322" y="520">SenseVoice int8 · 240MB</text>
+      <text class="dim" x="322" y="520">SenseVoice int8 · 掉字 / 漏标点</text>
       <rect x="552" y="486" width="196" height="72" rx="14" fill="#0D1526" stroke="#FFFFFF" stroke-opacity="0.07"/>
-      <text class="dim" x="574" y="520">本地识别 → 草稿</text>
+      <text class="dim" x="574" y="520">长句 / 口音 / 术语 更吃力</text>
       <line x1="58" y1="523" x2="742" y2="523" stroke="#E5484D" stroke-width="2" stroke-opacity="0.65"/>
     </g>
   </g>

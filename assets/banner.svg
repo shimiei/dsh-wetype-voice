@@ -60,16 +60,16 @@
   <!-- titles -->
   <text class="title" x="322" y="238">dsh-wetype-voice</text>
   <text class="sub" x="324" y="284">微信输入法语音输入 · DeepSeek Harness 插件</text>
-  <text class="hint" x="324" y="322">SendInput(RAlt+Space) → WeType 云端识别 → TSF 写进输入框</text>
+  <text class="hint" x="324" y="322">识别更准 · 长句 / 口音 / 专有名词 / 自动标点</text>
 
   <!-- chips -->
   <g transform="translate(324, 348)">
     <rect x="0" y="0" width="126" height="38" rx="19" fill="#07C160" opacity="0.14" stroke="#07C160" stroke-opacity="0.45"/>
     <text class="chip" x="19" y="26">Windows</text>
-    <rect x="140" y="0" width="152" height="38" rx="19" fill="#4D6BFE" opacity="0.16" stroke="#4D6BFE" stroke-opacity="0.45"/>
-    <text class="chip" x="160" y="26">面板可配置</text>
-    <rect x="306" y="0" width="96" height="38" rx="19" fill="#FFFFFF" opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.22"/>
-    <text class="chip" x="327" y="26">MIT</text>
+    <rect x="140" y="0" width="136" height="38" rx="19" fill="#4D6BFE" opacity="0.16" stroke="#4D6BFE" stroke-opacity="0.45"/>
+    <text class="chip" x="160" y="26">识别更准</text>
+    <rect x="290" y="0" width="152" height="38" rx="19" fill="#FFFFFF" opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.22"/>
+    <text class="chip" x="310" y="26">面板可配置</text>
   </g>
 
   <!-- waveform band along the bottom right -->
