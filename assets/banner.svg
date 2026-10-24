@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-label="dsh-wetype-voice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1120"/>
+      <stop offset="0.5" stop-color="#0E1730"/>
+      <stop offset="1" stop-color="#0A0F1C"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.8" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#07C160" stop-opacity="0.26"/>
+      <stop offset="0.55" stop-color="#0E7A4A" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo2" cx="0.1" cy="0.12" r="0.5">
+      <stop offset="0" stop-color="#4D6BFE" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#4D6BFE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B2745"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#07C160"/>
+      <stop offset="0.55" stop-color="#3BE08A"/>
+      <stop offset="1" stop-color="#4D6BFE"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+    <style>
+      .title { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 58px; font-weight: 650; letter-spacing: 0.4px; fill: #F6F8FF; }
+      .sub   { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 27px; font-weight: 400; fill: #A5B0CC; }
+      .hint  { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 21px; fill: #6F7C9C; }
+      .chip  { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 20px; fill: #CFE7DB; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="520" fill="url(#bg)"/>
+  <rect width="1600" height="520" fill="url(#grid)"/>
+  <rect width="1600" height="520" fill="url(#halo2)"/>
+  <rect width="1600" height="520" fill="url(#halo)"/>
+
+  <!-- logo tile -->
+  <g transform="translate(96, 166)">
+    <rect x="0" y="0" width="184" height="184" rx="44" fill="url(#tile)" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2"/>
+    <circle cx="92" cy="86" r="62" fill="#07C160" opacity="0.12"/>
+    <g fill="none" stroke="#F7FAFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="70" y="40" width="44" height="78" rx="22"/>
+      <path d="M56 94v7a36 36 0 0 0 72 0v-7"/>
+      <path d="M92 138v18"/>
+    </g>
+    <path d="M73 158h38" stroke="#F7FAFF" stroke-width="9" stroke-linecap="round"/>
+    <g fill="none" stroke="url(#mint)" stroke-linecap="round">
+      <path d="M143 72a30 30 0 0 1 0 44" stroke-width="7" opacity="0.95"/>
+      <path d="M158 56a52 52 0 0 1 0 76" stroke-width="6" opacity="0.5"/>
+      <path d="M41 72a30 30 0 0 0 0 44" stroke-width="7" opacity="0.95"/>
+      <path d="M26 56a52 52 0 0 0 0 76" stroke-width="6" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- titles -->
+  <text class="title" x="322" y="238">dsh-wetype-voice</text>
+  <text class="sub" x="324" y="284">微信输入法语音输入 · DeepSeek Harness 插件</text>
+  <text class="hint" x="324" y="322">SendInput(RAlt+Space) → WeType 云端识别 → TSF 写进输入框</text>
+
+  <!-- chips -->
+  <g transform="translate(324, 348)">
+    <rect x="0" y="0" width="126" height="38" rx="19" fill="#07C160" opacity="0.14" stroke="#07C160" stroke-opacity="0.45"/>
+    <text class="chip" x="19" y="26">Windows</text>
+    <rect x="140" y="0" width="152" height="38" rx="19" fill="#4D6BFE" opacity="0.16" stroke="#4D6BFE" stroke-opacity="0.45"/>
+    <text class="chip" x="160" y="26">面板可配置</text>
+    <rect x="306" y="0" width="96" height="38" rx="19" fill="#FFFFFF" opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.22"/>
+    <text class="chip" x="327" y="26">MIT</text>
+  </g>
+
+  <!-- waveform band along the bottom right -->
+  <g transform="translate(700, 452)" fill="none" stroke-linecap="round" opacity="0.8">
+    <path d="M0 0 C 46 -30, 96 -30, 142 0 S 234 30, 280 0 S 372 -30, 418 0 S 510 30, 556 0 S 648 -26, 694 0"
+          stroke="url(#mint)" stroke-width="5" opacity="0.85"/>
+    <path d="M0 0 C 52 18, 104 18, 156 0 S 260 -18, 312 0 S 416 18, 468 0 S 572 -18, 624 0"
+          stroke="#4D6BFE" stroke-width="2.5" opacity="0.45"/>
+  </g>
+
+  <!-- composer mock -->
+  <g transform="translate(1000, 96)">
+    <rect x="0" y="0" width="500" height="118" rx="24" fill="#111A2E" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <rect x="26" y="30" width="286" height="18" rx="9" fill="#FFFFFF" opacity="0.16"/>
+    <rect x="26" y="62" width="188" height="14" rx="7" fill="#FFFFFF" opacity="0.10"/>
+    <circle cx="452" cy="59" r="30" fill="#07C160" opacity="0.92"/>
+    <g transform="translate(438, 43)" fill="none" stroke="#08130D" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="7" y="0" width="15" height="23" rx="7.5"/>
+      <path d="M1 16v2a13.5 13.5 0 0 0 27 0v-2"/>
+      <path d="M14.5 31v5"/>
+    </g>
+    <circle cx="452" cy="59" r="30" fill="none" stroke="#07C160" stroke-opacity="0.35" stroke-width="6"/>
+  </g>
+
+  <!-- WeType floating pill mock -->
+  <g transform="translate(1092, 258)">
+    <rect x="0" y="0" width="392" height="92" rx="46" fill="#0F1729" stroke="#07C160" stroke-opacity="0.35"/>
+    <g fill="#07C160">
+      <rect x="40" y="34" width="7" height="24" rx="3.5" opacity="0.85"/>
+      <rect x="58" y="24" width="7" height="44" rx="3.5"/>
+      <rect x="76" y="16" width="7" height="60" rx="3.5"/>
+      <rect x="94" y="28" width="7" height="36" rx="3.5"/>
+      <rect x="112" y="20" width="7" height="52" rx="3.5" opacity="0.9"/>
+      <rect x="130" y="32" width="7" height="28" rx="3.5" opacity="0.8"/>
+    </g>
+    <text x="176" y="43" font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="19" fill="#DCE6F7">正在听…</text>
+    <text x="176" y="68" font-family="ui-monospace, Consolas, monospace" font-size="15" fill="#6F7C9C">WeType 3.0.0.38</text>
+    <circle cx="346" cy="46" r="22" fill="#FFFFFF" opacity="0.10"/>
+    <path d="M340 38l16 8-16 8z" fill="#EAF0FF" opacity="0.9"/>
+  </g>
+</svg>

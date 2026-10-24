@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-label="dsh-wetype-voice data flow">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#0A0F1C"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16203A"/>
+      <stop offset="1" stop-color="#101A2E"/>
+    </linearGradient>
+    <linearGradient id="mintcard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F3A2A"/>
+      <stop offset="1" stop-color="#0D2A20"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#07C160" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#07C160" stop-opacity="0.95"/>
+    </linearGradient>
+    <marker id="head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#07C160"/>
+    </marker>
+    <marker id="headDim" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5A6580"/>
+    </marker>
+    <style>
+      .h1 { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 26px; font-weight: 650; fill: #F2F5FF; }
+      .h2 { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; font-weight: 600; fill: #EAF0FF; }
+      .b  { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px; fill: #94A0BD; }
+      .m  { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 13.5px; fill: #7BE3AE; }
+      .dim{ font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px; fill: #6B7692; }
+      .tiny { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12.5px; fill: #5F6A85; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <text class="h1" x="48" y="58">数据流 · 一次点击之后发生了什么</text>
+  <text class="tiny" x="48" y="84">Windows · SendInput scancode injection · WeType 云端识别</text>
+
+  <!-- stage boxes -->
+  <g>
+    <rect x="48" y="120" width="196" height="112" rx="18" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <text class="h2" x="70" y="158">① 点麦克风</text>
+    <text class="b" x="70" y="186">composer 槽位按钮</text>
+    <text class="m" x="70" y="210">onMouseDown</text>
+
+    <rect x="300" y="120" width="196" height="112" rx="18" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <text class="h2" x="322" y="158">② Host 路由</text>
+    <text class="b" x="322" y="186">同源校验后分发</text>
+    <text class="m" x="322" y="210">POST /wetype/api</text>
+
+    <rect x="552" y="120" width="196" height="112" rx="18" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <text class="h2" x="574" y="158">③ 合成按键</text>
+    <text class="b" x="574" y="186">暖 PowerShell 助手</text>
+    <text class="m" x="574" y="210">RAlt↓ Space↓↑ RAlt↑</text>
+
+    <rect x="804" y="120" width="196" height="112" rx="18" fill="url(#mintcard)" stroke="#07C160" stroke-opacity="0.55"/>
+    <text class="h2" x="826" y="158">④ 微信输入法</text>
+    <text class="b" x="826" y="186">录音 + 云端识别</text>
+    <text class="m" x="826" y="210">WeType 3.x</text>
+
+    <rect x="956" y="286" width="196" height="112" rx="18" fill="url(#mintcard)" stroke="#07C160" stroke-opacity="0.55"/>
+    <text class="h2" x="978" y="324">⑤ 写进输入框</text>
+    <text class="b" x="978" y="352">TSF 提交文本</text>
+    <text class="m" x="978" y="376">Lexical contenteditable</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="url(#arrow)" stroke-width="2.5" fill="none" marker-end="url(#head)">
+    <path d="M244 176 H292"/>
+    <path d="M496 176 H544"/>
+    <path d="M748 176 H796"/>
+    <path d="M902 232 V260 H1040 V282"/>
+  </g>
+  <g class="tiny">
+    <text x="252" y="164">fetch</text>
+    <text x="504" y="164">op: trigger</text>
+    <text x="756" y="164">guard 通过</text>
+    <text x="908" y="252">识别完成</text>
+  </g>
+
+  <!-- guard note -->
+  <g>
+    <rect x="300" y="286" width="448" height="112" rx="18" fill="#0D1526" stroke="#4D6BFE" stroke-opacity="0.35" stroke-dasharray="6 6"/>
+    <text class="h2" x="322" y="322">前台守卫</text>
+    <text class="b" x="322" y="350">只在前台是本应用窗口时才发键</text>
+    <text class="m" x="322" y="374">SKIP|foreground is 'X.exe'</text>
+  </g>
+
+  <!-- old path, struck through -->
+  <g opacity="0.55">
+    <text class="dim" x="48" y="470">内置链路（已被 patch 关闭）</text>
+    <g>
+      <rect x="48" y="486" width="196" height="72" rx="14" fill="#0D1526" stroke="#FFFFFF" stroke-opacity="0.07"/>
+      <text class="dim" x="70" y="520">MediaRecorder</text>
+      <rect x="300" y="486" width="196" height="72" rx="14" fill="#0D1526" stroke="#FFFFFF" stroke-opacity="0.07"/>
+      <text class="dim" x="322" y="520">SenseVoice int8 · 240MB</text>
+      <rect x="552" y="486" width="196" height="72" rx="14" fill="#0D1526" stroke="#FFFFFF" stroke-opacity="0.07"/>
+      <text class="dim" x="574" y="520">本地识别 → 草稿</text>
+      <line x1="58" y1="523" x2="742" y2="523" stroke="#E5484D" stroke-width="2" stroke-opacity="0.65"/>
+    </g>
+  </g>
+</svg>
